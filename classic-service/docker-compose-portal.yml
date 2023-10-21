@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  classic-infra-portal:
+    image: classic-infra-portal:latest
+    container_name: 'classic-infra-portal'
+    ports:
+      - "8000:8000"
+    environment:
+      DB_USER: admin
+      DB_PASSWORD: admin
+      DB_NAME: postgres
+      DB_HOST: '{IP_OF_DB_EC2}'
+      DB_PORT: 5432
+    volumes:
+      - ./images:/images
+    networks:
+      - classic-infra

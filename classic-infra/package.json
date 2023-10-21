@@ -2,13 +2,15 @@
   "name": "diploma",
   "version": "0.1.0",
   "bin": {
-    "diploma": "bin/diploma.js"
+    "diploma": "classic/bin/diploma.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "bootstrap": "cdk bootstrap --profile persononomo",
+    "deploy-all": "npm run build && cdk deploy --profile persononomo --all",
+    "destroy-all": "npm run build && cdk destroy --profile persononomo --all"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
